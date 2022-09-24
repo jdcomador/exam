@@ -7,3 +7,5 @@ Code Implementation
 PS: add these in .env file to run
 OPENWEATHERMAP_APP_ID= "40be2cbc0bf5e2579c44d3ca114d4f4e"
 FOURSQUARE_APP_ID= "fsq3kxj5EveT1BkEQLoch2fUyjYOIxUpBex5Gi0rTOdlizA="
+
+Languages Used: Laravel 8, HTML, CSS, Jquery, Bootstrap 5
