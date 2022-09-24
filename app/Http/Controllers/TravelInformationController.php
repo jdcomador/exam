@@ -9,6 +9,7 @@ class TravelInformationController extends Controller
 {
 
     public function index(){
+        //cities: Tokyo, Yokohama, Kyoto, Osaka, Sapporo, Nagoya
         $city_list = ['Tokyo', 'Yokohama', 'Kyoto', 'Osaka', 'Sapporo', 'Nagoya'];
 
         return view("home", ["city_list" => $city_list]);
@@ -24,23 +25,18 @@ class TravelInformationController extends Controller
     }
 
     public function getWeatherForecast($city_name){
-        //cities: Tokyo, Yokohama, Kyoto, Osaka, Sapporo, Nagoya
-        //api key: 40be2cbc0bf5e2579c44d3ca114d4f4e
         $response = Http::get('api.openweathermap.org/data/2.5/weather', [
             'q' => $city_name,
             'units' => 'metric',
-            'APPID' => '40be2cbc0bf5e2579c44d3ca114d4f4e',
+            'APPID' => env('OPENWEATHERMAP_APP_ID'),
         ]);
 
         return $response;
     }
 
     public function getPlaceInformation($city_name){
-        //cities: Tokyo, Yokohama, Kyoto, Osaka, Sapporo, Nagoya
-        //api key: fsq3kxj5EveT1BkEQLoch2fUyjYOIxUpBex5Gi0rTOdlizA=
-
         $response = Http::withHeaders([
-            'Authorization' => 'fsq3kxj5EveT1BkEQLoch2fUyjYOIxUpBex5Gi0rTOdlizA=',
+            'Authorization' => env('FOURSQUARE_APP_ID'),
         ])->get('https://api.foursquare.com/v3/places/search', [
             'near' => $city_name,
             'limit'=> 5,

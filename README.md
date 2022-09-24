@@ -3,3 +3,7 @@ UI/UX Implementation
 
 Code Implementation
 - I don't know if this is the best code implementation but I tried to do it as easy to understand as possible in terms of the flow of the process.
+
+PS: add these in .env file to run
+OPENWEATHERMAP_APP_ID= "40be2cbc0bf5e2579c44d3ca114d4f4e"
+FOURSQUARE_APP_ID= "fsq3kxj5EveT1BkEQLoch2fUyjYOIxUpBex5Gi0rTOdlizA="
